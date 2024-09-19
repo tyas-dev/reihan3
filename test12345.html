@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Data Mahasiswa</title>
+</head>
+<body>
+    <h2>Formulir Data Mahasiswa</h2>
+    <form id="mahasiswaForm">
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label for="kelas">Kelas:</label><br>
+        <input type="text" id="kelas" name="kelas" required><br><br>
+
+        <label for="matkul">Mata Kuliah:</label><br>
+        <input type="text" id="matkul" name="matkul" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Data Mahasiswa:</h3>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById('mahasiswaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form di-submit
+
+            // Mengambil nilai dari form
+            var nama = document.getElementById('nama').value;
+            var kelas = document.getElementById('kelas').value;
+            var matkul = document.getElementById('matkul').value;
+
+            // Menampilkan data yang diisi di bawah form
+            document.getElementById('output').innerHTML = 
+                "Nama: " + nama + "<br>" +
+                "Kelas: " + kelas + "<br>" +
+                "Mata Kuliah: " + matkul;
+        });
+    </script>
+</body>
+</html>
